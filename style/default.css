@@ -1,0 +1,610 @@
+html {
+	margin:0;
+	padding:0;
+}
+body {
+	margin:0;
+	padding:0;
+	background:rgba(214,50,0,1);
+	font-family:"Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+	font-size:16px;
+	color:#765a35;
+}
+
+/* 登录界面按钮配置 - 开始 */
+input { 
+	border: 2px solid #ccc; 
+	padding: 15px 0px; 
+	border-radius: 6px; 
+	padding-left:5px; 
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075); 
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075); 
+	-webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s; 
+	-o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s; 
+	transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+	color:#765a35;
+	font-size:18px;
+}
+input:focus { 
+	border-color: #e1b619;
+	outline: 0;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 12px rgba(210,154,54,.6); 
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 12px rgba(210,154,54,.6) 
+}
+li {list-style-type:none;}
+button {
+	height: 56px; /* 高度 */
+	border-width: 0px; /* 边框宽度 */
+	border-radius: 6px; /* 边框半径 */
+	cursor: pointer; /* 鼠标移入按钮范围时出现手势 */
+	outline: none; /* 不显示轮廓线 */
+	font-family: Microsoft YaHei; /* 设置字体 */
+	color: white; /* 字体颜色 */
+	font-size: 18px; /* 字体大小 */
+}
+.sex-img{
+  height: 120px;
+  width: 79px;
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-position: center;
+  vertical-align: middle;
+  margin-top: 5px;
+  margin-left:45px;
+  background-size: cover;
+}
+.m-img{background-image: url('../images/sex/m-2.png');}
+input[type="radio"]:checked + .m-img{
+  background-image: url('../images/sex/m-1.png');
+  background-size: cover;
+}
+.f-img{background-image: url('../images/sex/f-2.png');}
+input[type="radio"]:checked + .f-img{
+  background-image: url('../images/sex/f-1.png');
+  background-size: cover;
+}
+/* 登录界面按钮配置 - 结束 */
+
+#music_btn{
+	position: absolute;
+	float:right;
+	top:5%;
+	right:1%;
+	width:50px;
+	height:50px;
+}
+
+/* 主体方框配置- 开始 */
+.main {
+	position:absolute;
+	top:0;
+	bottom:0; 
+	left:0; 
+	right:0; 
+	margin:auto; 
+	width:1600px;
+	height:800px;
+	background:rgba(255,255,255,1);
+	border: 3px solid #e1b619;
+	border-radius: 6px;
+
+}
+/* 主体方框配置- 结束 */
+
+/* 登录面板配置- 开始 */
+.login {
+	margin-top:300px;
+	margin-left:920px;
+	width:450px;
+	height:300px;
+	background:rgba(255,255,255,0.6);
+	border: 3px solid #e1b619;
+	border-radius: 6px;
+	padding:50px;
+	text-align: center;
+}
+.login li {
+	text-align: center;
+	width:350px;
+	margin-top:25px;
+}
+.login input{
+	width:98%;
+	font-weight: 600;
+	color:#d63200;
+}
+.login button{
+	width:100%;
+	background: #d63200;
+}
+.login button:hover{/*鼠标移动时的颜色变化*/
+	background-color: #bd212c;
+}
+/* 登录面板配置- 结束 */
+
+/*右上角个人信息配置- 开始 */
+.char-list {
+	position: relative; 
+	float:left;
+	width:600px;
+	height:130px;
+}
+.char-list .avatar {
+	float:left;
+	margin-top:17px;
+	margin-left:20px;
+}
+.char-list .avatar img {
+	height:100%;
+	cursor:pointer;
+	-webkit-animation:scaleout 3.3s infinite ease-in-out;
+	animation:scaleout 3.3s infinite ease-in-out;
+}
+.char-list .avatar-content{
+	float:left;
+	margin-top:30px;
+	margin-left:10px;
+	width:450px;
+	height:80px;
+}
+.char-list .avatar-content .char-life{
+	padding:6px 10px 0px 10px;
+	height:30px;
+	width:400px;
+	background-image:url("../images/maxlife.png");
+}
+.char-list .avatar-content .char-life .max-hp{
+	margin:0;
+	height:21px;
+	background-image:url("../images/life.png");
+}
+.char-list .avatar-content .char-life .min-hp{
+	height:100%;
+	border-radius:4px;
+	background-image: linear-gradient(0deg, #d50002 0%, white 80% ,#d50002 100%);
+}
+.char-list .avatar-content .char-name{
+	width:430px;
+	height:35px;
+	margin-left:5px;
+	font-size:28px;
+	font-weight: 800;
+	color:#e1b619;
+	text-shadow: 0 0 5px #d63200, 0 0 5px #d63200;
+}
+/*右上角个人信息配置- 结束 */
+
+/*左上角银元、成就点显示配置- 开始 */
+.point-list {
+	position: relative; 
+	float:right;
+	width:600px;
+	height:100px;
+}
+.point-list .p-img {
+	float:right;
+	margin-top:30px;
+	margin-right:25px;
+}
+.point-list .p-num {
+	float:right;
+	width:150px;
+	margin-top:33px;
+	font-size:26px;
+	font-weight: 800;
+	color:#d29a36;
+	text-shadow: 0 0 5px #fff, 0 0 5px #fff;
+}
+/*左上角银元、成就点显示配置- 结束 */
+
+/*左侧功能菜单配置- 开始 */
+.menu-list {
+	position: absolute; 
+	top:200px;
+	left:1430px;
+	width:160px;
+	height:400px;
+}
+.menu-list .menu-ico {
+	margin-top:20px;
+	width:120px;
+	height:100px;
+	object-fit: cover;
+	transition: 0.2s;
+}
+
+
+.menu-list .menu-ico:hover {
+	transform: scale(1.2);
+}
+/*左侧功能菜单配置- 结束 */
+
+/*对话框NPC人物显示配置- 开始 */
+.img-list {
+	position: absolute; 
+	z-index: 51;
+	top:225px;
+	left:190px;
+	width:260px;
+	height:465px;
+}
+/*对话框NPC人物显示配置- 结束 */
+
+/*战斗场景NPC显示配置- 开始 */
+.img-atk {
+	position: relative; 
+	z-index: 51;
+	top:0%;
+	left:0%;
+	width:500px;
+	height:550px;
+}
+.img-atk .npc-maxlife{
+	position: relative;
+	width:255px;
+	height:13px;
+	left:110px;
+	background:#000000;
+}
+.img-atk .npc-maxlife .npc-hp{
+	width:100%;
+	height:13px;
+	left:110px;
+	background-image:url(../images/npc_hp.png);
+}
+/*战斗场景NPC显示配置- 结束 */
+
+/*战斗答题面板配置- 开始 */
+.view-atk {
+	position: absolute; 
+	z-index: 50;
+	top:300px;
+	left:600px;
+	width:782px;
+	height:389px;
+	background-image:url(../images/atk_bg.png);
+}
+.view-atk .view {
+	margin-top:50px;
+	margin-left:50px;
+	width:660px;
+	height:auto;
+	font-size:18px;
+	font-weight:700;
+	color:#fff;
+}
+.view-atk .view li {
+	width: auto;
+	height: auto;
+	line-height: auto;
+	padding: 10px;
+	margin: 6px;
+	transition: all .3s;
+} 
+.view-atk .view li:hover {
+	background:#b32142;
+	color: #d29a36;
+	cursor: pointer;
+	border-radius: 9px;
+}
+.timbar-bg {
+	padding:1px;
+	width:154px;
+	height:8px;
+	background: #000000;
+	float:right;
+	margin-right:20px;
+}
+.timbar-bg .timbar {
+	width:100%;
+	height:6px;
+	background-image:url(../images/timbar.png);
+}
+/*战斗答题面板配置- 结束 */
+
+/*对话框配置- 开始 */
+.view-list {
+	position: absolute; 
+	z-index: 50;
+	top:200px;
+	left:150px;
+	width:1172px;
+	height:530px;
+	background-image:url(../images/talk.png);
+}
+.view-list .view {
+	margin-top:50px;
+	margin-left:350px;
+	width:750px;
+	height:auto;
+	font-size:20px;
+	font-weight:700;
+}
+.view-list .view li {
+	width: auto;
+	height: auto;
+	line-height: auto;
+	padding: 10px;
+	margin: 6px;
+	transition: all .3s;
+} 
+.view-list .view li:hover {
+	background:#d29a36;
+	color: #d63200;
+	cursor: pointer;
+	border-radius: 9px;
+}
+/*对话框配置- 结束 */
+
+/* 弹出界面的关闭按钮 - 开始 */
+.info-close{
+	position:relative;
+	float:right;
+	width:40px;
+	height:40px;
+	top:30px;
+	right:70px;
+	object-fit: cover;
+	transition: 0.2s;
+	background-image:url(../images/button/close.png);
+}
+.info-close:hover {
+	transform: scale(1.2);
+}
+/* 弹出界面的关闭按钮 - 结束 */
+
+/*弹出个人信息栏显示配置- 开始 */
+#charinfo{
+	display: none;
+	position:absolute;
+	z-index: 101;
+	width: 368px;
+	height: 452px;
+	top:120px;
+	left:150px;
+	margin:auto;
+	background-image:url(../images/background/charinfo.png);
+}
+#charinfo .info-char {
+	width:100px;
+	height:200px;
+	float:left;
+	position:relative;
+	top:100px;
+	left:75px;
+}
+#charinfo .info-item {
+	width:56px;
+	height:auto;
+	float:left;
+	position:relative;
+	top:140px;
+	left:120px;
+}
+#charinfo .info-item img{
+	margin-bottom: 30px;
+}
+#charinfo .info-value {
+	float:left;
+	position:relative;
+	width:200px;
+	font-size: 18px;
+	font-weight: 800;
+	top:250px;
+	left:-70px;
+	color:#e1b619;
+}
+/*弹出个人信息栏显示配置- 结束 */
+
+/*弹出成就top10显示配置- 开始 */
+#rankinfo{
+	display: none;
+	position:absolute;
+	z-index: 101;
+	width: 408px;
+	height: 682px;
+	top:80px;
+	left:1000px;
+	margin:auto;
+	background-image:url(../images/background/rankinfo.png);
+}
+#rankinfo .list-rank {
+	position:relative;
+	width:300px;
+	height:500px;
+	top:100px;
+	left:50px;
+	font-size:18px;
+    font-weight:700;
+}
+#rankinfo .list-rank table{
+	width:100%;
+	text-align: left;
+}
+#rankinfo .list-rank table tr{
+	height:8px;
+}
+#rankinfo .list-myrank {
+	position:relative;
+	width:300px;
+	height:50px;
+	top:100px;
+	left:50px;
+	font-size:18px;
+    font-weight:700;
+}
+#rankinfo .list-myrank table{
+	width:100%;
+}
+/*弹出成就top10显示配置- 结束 */
+
+/*弹出道具商店显示配置- 开始 */
+#shopinfo{
+	display: none;
+	position:absolute;
+	z-index: 103;
+	width: 600px;
+	height: 646px;
+	top:100px;
+	left:400px;
+	margin:auto;
+	background-image:url(../images/background/shopinfo.png);
+}
+#shopinfo .list-item{
+	position:relative;
+	width: 512px;
+	height: 376px;
+	top:100px;
+	left:50px;
+}
+#shopinfo .list-item img{
+	width:56px;
+	height:56px;
+	margin-right:8px;
+	margin-bottom:4px;
+}
+#shopinfo .view-item{
+	padding:10px;
+	position: relative;
+	width:490px;
+	height:100px;
+	top:80px;
+	left:52px;
+	font-size:16px;
+	font-weight: 700;
+}
+#shopinfo .view-item h3{
+	color:#e1b619;
+	text-shadow: 0 0 5px #fff, 0 0 5px #fff;
+}
+#shopinfo .view-item .item-btn{
+	float:right;
+	position: relative;
+	width:78px;
+	height:30px;
+	background-image: url(../images/button/buy.png);
+}
+#shopinfo .view-item .item-btn:hover {
+	background-image: url(../images/button/hbuy.png);
+}
+/*弹出道具商店显示配置- 结束 */
+
+/*弹出道具背包显示配置- 开始 */
+#baginfo{
+	display: none;
+	position:absolute;
+	z-index: 103;
+	width: 600px;
+	height: 646px;
+	top:150px;
+	left:450px;
+	margin:auto;
+	background-image:url(../images/background/baginfo.png);
+}
+#baginfo .list-item{
+	position:relative;
+	width: 512px;
+	height: 376px;
+	top:100px;
+	left:50px;
+}
+#baginfo .list-item .bag-item{
+	float:left;
+	width:56px;
+	height:56px;
+	margin-right:8px;
+	margin-bottom:4px;
+}
+#baginfo .list-item .bag-item .item-num{
+	position: relative;
+	text-align: right;
+	right:6px;
+	top:38px;
+	width:100%;
+	height:100%;
+	font-size:14px;
+	font-weight: 600;
+	color:#FFF;
+	text-shadow: 0 0 3px #000, 0 0 3px #000;
+}
+#baginfo .list-item .bag-item .item-eq{
+	position: relative;
+	text-align: center;
+	left:3px;
+	top:20px;
+	width:50px;
+	height:20px;
+	font-size:14px;
+	font-weight: 600;
+	color:#FFF;
+	text-shadow: 0 0 3px #000, 0 0 3px #000;
+	background: rgba(0,0,0,.4);
+}
+#baginfo .view-item{
+	padding:10px;
+	position: relative;
+	width:490px;
+	height:100px;
+	top:80px;
+	left:52px;
+	font-size:16px;
+	font-weight: 700;
+}
+#baginfo .view-item h3{
+	color:#e1b619;
+	text-shadow: 0 0 5px #fff, 0 0 5px #fff;
+}
+#baginfo .view-item .item-sell{
+	float:right;
+	position: relative;
+	width:78px;
+	height:30px;
+	margin-right:10px;
+	background-image: url(../images/button/sell.png);
+}
+#baginfo .view-item .item-sell:hover {
+	background-image: url(../images/button/hsell.png);
+}
+#baginfo .view-item .item-use{
+	float:right;
+	position: relative;
+	width:78px;
+	height:30px;
+	background-image: url(../images/button/used.png);
+}
+#baginfo .view-item .item-use:hover {
+	background-image: url(../images/button/hused.png);
+}
+#baginfo .view-item .item-equip{
+	float:right;
+	position: relative;
+	width:78px;
+	height:30px;
+	background-image: url(../images/button/equip.png);
+}
+#baginfo .view-item .item-equip:hover {
+	background-image: url(../images/button/hequip.png);
+}
+#baginfo .view-item .item-remove{
+	float:right;
+	position: relative;
+	width:78px;
+	height:30px;
+	background-image: url(../images/button/remove.png);
+}
+#baginfo .view-item .item-remove:hover {
+	background-image: url(../images/button/hremove.png);
+}
+/*弹出道具背包显示配置- 结束 */
+
+/*石头剪刀布图片 - 开始*/
+.img-ston {
+	float:center;
+	margin:50px;
+	object-fit: cover;
+	transition: 0.2s;
+}
+.img-ston:hover {
+	transform: scale(1.2);
+}
+/*石头剪刀布图片 - 结束*/
